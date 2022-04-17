@@ -1,0 +1,574 @@
+---
+title: "📦<br>You can make an R package too!"
+subtitle: "UoY, Bioinformatics group"
+author: "Emma Rand"
+date: "<br>🔗 [bit.ly/3mma-dda](https://bit.ly/3mma-dda)"
+format:
+  revealjs: 
+    theme: [simple, emma.scss]
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+    footer: <https://bit.ly/3mma-dda>
+    margin: 0.04
+execute:
+  echo: true
+  eval: false
+bibliography: references.bib
+---
+
+## Summary
+
+-   Why make a package?
+-   Where packages come from and where do they live?
+-   Package States
+-   How to make a minimal documented package and check it
+-   Components of a minimal package
+
+## Prerequisites
+
+You should have
+
+-   R and RStudio
+-   R build toolchain: Rtools(windows) or XCode (mac) or r-base-dev
+-   `devtools` and `assertthat`
+-   optionally git, a GitHub account and verified it can talk to RStudio
+
+## Learning Objectives {.smaller}
+
+by the end of this session you will able to:
+
+-   explain the rationale for writing packages
+-   describe the different states a package can be in
+-   create a minimal package and explain its key components
+-   use the package interactively with `devtools::load_all()`
+-   use `devtools::check()` to execute `R CMD` check
+-   add documentation using **`roxygen2`** and `devtools::document()`
+-   add package dependencies with `usethis::use_package()`
+
+# Why make a package?
+
+## Why make a package?
+
+Conventionally:
+
+-   Package developers
+-   Generalisable analytical methods
+-   For use on other data
+-   Public release
+
+## Why make a package?
+
+Package up your data analysis project!
+
+-   You don't need to have a collection of highly generalisation functions
+-   You don't need to share it with anyone else
+-   If you are already trying to work reproducibly you are almost doing it anyway!
+-   But it will help you do it better
+
+## Why make a package?
+
+If you are already trying to work reproducibly you are almost doing it anyway!
+
+    /stem-cell-proteomic
+       /data-raw
+       /date-processed
+       /figures
+       /R
+       README.md
+       report.Rmd
+       stem-cell-proteomic.RProj
+
+... making a package is just a short step beyond that
+
+## Script vs package
+
+::: columns
+::: {.column width="35%"}
+### Script
+
+-   one-off data analysis
+-   defined by `.R` extension
+-   `library()` calls
+-   documentation in \# comments
+-   `source()`
+:::
+
+::: {.column width="65%"}
+### Package
+
+-   defines reusable components
+-   defined by presence of `DESCRIPTION` file
+-   Required packages specified in `DESCRIPTION`, made available in `NAMESPACE` file
+-   documentation in files and `Roxygen` comments
+-   Install and restart
+:::
+:::
+
+## Be nice to future you
+
+![Future self: CC-BY-NC, by Julen Colomb, derived from Randall Munroe cartoon](images/future_you.png){fig-alt="Person working at a computer with an offstage person asking \"How is the analysis going?\" The person at the computer replies \"Can't understand the data...and the data collector does not answer my emails or calls\" Person offstage: \"That's terrible! So cruel! Who did collect the data? I will sack them!\" Person at the computer: \"um...I did, 3 years ago\""}
+
+## To avoid
+
+<iframe src="https://giphy.com/embed/M11UVCRrc0LUk" width="480" height="277" frameBorder="0" class="giphy-embed" allowFullScreen>
+
+</iframe>
+
+<p>
+
+<a href="https://giphy.com/gifs/M11UVCRrc0LUk">via GIPHY</a>
+
+</p>
+
+# Where packages come from and live?
+
+## Where do R packages come from?
+
+CRAN:
+
+```{r}
+install.packages("praise")
+```
+
+GitHub:
+
+```{r}
+remotes::install_github("rladies/praise")
+```
+
+Bioconductor
+
+```{r}
+BiocManager::install("celaref")
+```
+
+## Where do packages live?
+
+In a library!
+
+```{r}
+#| eval: true
+R.home()
+```
+
+The R home directory is the top-level directory of your R installation.
+
+Note: this is **not** the same as your working directory or your home directory.
+
+## Your R installation
+
+```{r}
+#| eval: true
+list.files(R.home())
+```
+
+## Your library
+
+```{r}
+#| eval: true
+.Library
+```
+
+## Your library
+
+```{r}
+#| eval: true
+dir(.Library)
+```
+
+# Package states
+
+## Package states
+
+There are five states a package can be in:
+
+-   source
+
+-   bundled
+
+-   binary
+
+-   installed
+
+-   in-memory
+
+::: aside
+Having a understanding of the different states a package can be in is helpful in understanding package development.
+:::
+
+## Package states
+
+![](images/installation.png){fig-alt="schematic of package states and the functions that move them between states. One the horizontal axis: source, bundle, binary, installed, in memory. One the vertical axis the functions install.packages, R CMD install, install, build, install_github"}
+
+::: aside
+Figure from [R Packages](https://r-pkgs.org/) [@wickham2020]
+:::
+
+## Package states
+
+::: columns
+::: {.column width="40%"}
+-   ::: {style="background-color: #707070"}
+    source
+    :::
+
+-   bundled
+
+-   binary
+
+-   installed
+
+-   in-memory
+:::
+
+::: {.column width="60%" style="background-color: #707070"}
+What you create and work on.
+
+Specific directory structure with some particular components e.g., `DESCRIPTION`, an `R/` directory.
+:::
+:::
+
+## Package states
+
+::: columns
+::: {.column width="40%"}
+-   source
+
+-   ::: {style="background-color: #707070"}
+    bundled
+    :::
+
+-   binary
+
+-   installed
+
+-   in-memory
+:::
+
+::: {.column width="60%" style="background-color: #707070"}
+Also known as "source tarballs".
+
+Package files compressed to single file.
+
+Conventionally `.tar.gz`
+
+You don't normally need to make one.
+
+Unpacked it looks very like the source package
+
+What you create and work on.
+:::
+:::
+
+## Package states
+
+::: columns
+::: {.column width="40%"}
+-   source
+
+-   bundled
+
+-   ::: {style="background-color: #707070"}
+    binary
+    :::
+
+-   installed
+
+-   in-memory
+:::
+
+::: {.column width="60%" style="background-color: #707070"}
+Package distribution for users w/o dev tools
+
+Also a single file
+
+Platform specific: `.tgz` (Mac) `.zip` (Windows)
+
+Package developers submit a bundle to CRAN; CRAN makes and distributes binaries
+
+`install.packages()`
+:::
+:::
+
+## Package states
+
+::: columns
+::: {.column width="40%"}
+-   source
+
+-   bundled
+
+-   binary
+
+-   ::: {style="background-color: #707070"}
+    installed
+    :::
+
+-   in-memory
+:::
+
+::: {.column width="60%" style="background-color: #707070"}
+A binary package that's been decompressed into a package library
+
+Command line tool `R CMD INSTALL` powers all package installation
+:::
+:::
+
+## Package states
+
+::: columns
+::: {.column width="40%"}
+-   source
+
+-   bundled
+
+-   binary
+
+-   installed
+
+-   ::: {style="background-color: #707070"}
+    in-memory
+    :::
+:::
+
+::: {.column width="60%" style="background-color: #707070"}
+If a package is installed, `library()` makes its function available by loading the package into memory and attaching it to the search path.
+
+We do not use `library()` for packages we are working on
+
+`devtools::load_all()` loads a source package directly into memory.
+:::
+:::
+
+# Create a package!
+
+## Create a package
+
+Be deliberate about where you create your package
+
+Do not nest inside another RStudio project, R package or git repo.
+
+```{r}
+usethis::create_package("~/Desktop/mypackage")
+```
+
+::: aside
+You may want a different path
+:::
+
+##  {.smaller}
+
+```{r}
+√ Creating 'C:/Users/er13/Desktop/mypackage/'
+√ Setting active project to 'C:/Users/er13/Desktop/mypackage'
+√ Creating 'R/'
+√ Writing 'DESCRIPTION'
+Package: mypackage
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors\@R (parsed):
+   * First Last \<first.last\@example.com\> \[aut, cre\] (YOUR-ORCID-ID)
+Description: What the package does (one paragraph).
+License: \`use_mit_license()\`, \`use_gpl3_license()\` or friends to
+    pick a license
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+√ Writing 'NAMESPACE'
+√ Writing 'mypackage.Rproj'
+√ Adding '.Rproj.user' to '.gitignore'
+√ Adding '\^mypackage\\\\.Rproj\$', '\^\\\\.Rproj\\\\.user\$' to '.Rbuildignore'
+√ Opening 'C:/Users/er13/Desktop/mypackage/' in new RStudio session
+√ Setting active project to '\<no active project\>'
+```
+
+## `create_package()`
+
+What happens when we run `create_package()`?
+
+-   R will create a folder called `mypackage` which is a package and an RStudio project
+
+-   restart R in the new project
+
+-   create some infrastructure for your package
+
+-   start the RStudio Build pane
+
+::: aside
+continued.....
+:::
+
+## `create_package()`
+
+What happens when we run `create_package()`?
+
+-   `mypackage.Rproj` is the file that makes this directory an RStudio Project.
+
+-   `DESCRIPTION` provides metadata about your package.
+
+-   The `R/` directory is where we will put `.R` files with function definitions.
+
+-   `NAMESPACE` declares the functions your package exports for external use and the external functions your package imports from other packages.
+
+::: aside
+continued.....
+:::
+
+## `create_package()`
+
+What happens when we run `create_package()`?
+
+-   `.Rbuildignore` lists files that we need but that should not be included when building the R package from source.
+
+-   `.gitignore` anticipates Git usage and ignores some standard, behind-the-scenes files created by R and RStudio.
+
+## Add a function
+
+Functions will go in an `.R` file.
+
+There's a `usethis` helper for adding `.R` files!
+
+```{r}
+usethis::use_r("file_name")
+```
+
+`usethis::use_r()` adds the file extension and saves in `R/` folder
+
+## `usethis::use_r()`
+
+Create a new R file in your package called `animal_sounds.R`
+
+. . .
+
+```{r}
+usethis::use_r("animal_sounds")
+```
+
+. . .
+
+
+```{r}
+#| code-line-numbers: "|3"
+√ Setting active project to 'C:/Users/er13/Desktop/mypackage'
+• Modify 'R/animal_sounds.R'
+• Call \`use_test()\` to create a matching test file
+```
+
+
+
+## Add the function
+
+Put the following code into your script:
+
+```{r}
+#| code-line-numbers: "|2-4"
+animal_sounds <- function(animal, sound) {
+  assertthat::assert_that(
+    assertthat::is.string(animal),
+    assertthat::is.string(sound)
+  )
+  paste0("The ", animal, " goes ", sound, "!")
+}
+```
+
+# Test your function
+
+## Development workflow
+
+In a normal script you might use:
+
+```{r}
+source("R/animal_sounds.R")
+```
+
+. . .
+
+but when building packages we use a `devtools` approach
+
+## Development workflow
+
+![Development workflow](images/dev_cycle_before_testing.png){fig-alt="there are three boxes with arrow joining them clockwise. The boxes are (clockwise from 3' oclock) 'devtools::load_all() Cmd/Ctrl + Shift +L', 'Explore in console' and 'Modify code'"}
+
+# Load your package
+
+## `devtools::load_all()`
+
+Load with `devtools::load_all()`.
+
+```{r}
+devtools::load_all()
+```
+
+    Loading mypackage
+
+## Test
+
+Test the `animal_sounds()` function in the console.
+
+```{r}
+animal_sounds("dog", "woof")
+```
+
+    [1] "The dog goes woof!"
+
+## `devtools::load_all()`
+
+Change some tiny thing about your function - maybe the animal "says" instead of "goes"?
+
+
+. . .
+
+
+
+Load with `devtools::load_all()` and test the updated function.
+
+
+# Check your package
+
+
+## Check your package
+
+`R CMD check` is the gold standard for checking that an R package is in full working order.
+
+It is a programme that is executed in the shell.
+
+However, `devtools` has the `check()` function to allow you to run this without leaving your R session.
+
+## `devtools::check()`
+
+Check your package
+
+```{r}
+devtools::check()
+```
+
+## `devtools::check()`
+
+You will get lots of output ending with:
+
+```{r}
+#| code-line-numbers: "|4-7|9-10"
+-- R CMD check results -------------------- mypackage 0.0.0.9000 ----
+  Duration: 12.5s
+
+> checking DESCRIPTION meta-information ... WARNING
+  Non-standard license specification:
+    `use_mit_license()`, `use_gpl3_license()` or friends to pick a license
+  Standardizable: FALSE
+
+> checking dependencies in R code ... WARNING
+  '::' or ':::' import not declared from: 'assertthat'
+0 errors √ | 2 warnings x | 0 notes √
+```
+
+## Document your functions
+
+insert roxygen skeleton
+
+`devtools::document()`
+
+## Add package dependencies
+
+## References {.smaller}

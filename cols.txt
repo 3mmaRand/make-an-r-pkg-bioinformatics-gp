@@ -1,0 +1,8 @@
+#3F3F3F !default; // charcoal grey background
+#818181 !default; // mid grey
+#2CDDE0 !default; // light turquoise text
+#EE9AD9 !default; // light pink text
+#65E4E8 !default; // dark turquoise
+#C5F7F8 !default; // light turquoise
+#BD1A8D !default; // dark pink
+
