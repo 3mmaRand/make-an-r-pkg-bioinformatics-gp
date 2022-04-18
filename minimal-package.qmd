@@ -10,7 +10,8 @@ format:
     chalkboard: true
     preview-links: auto
     footer: <https://bit.ly/3mma-dda>
-    margin: 0.04
+    margin: 0.07
+    code-link: true
 execute:
   echo: true
   eval: false
@@ -22,8 +23,12 @@ bibliography: references.bib
 -   Why make a package?
 -   Where packages come from and where do they live?
 -   Package States
--   How to make a minimal documented package and check it
+-   How to make a minimal documented package and check it using the `devtools`[@wickham2021] approach
 -   Components of a minimal package
+
+::: aside
+Based on [R Packages](https://r-pkgs.org/) [@wickham2020], Data Science for Modern and Open Research: You can make an R package too! [@rand2021], [Forwards Package development modules](https://github.com/forwards/workshops) [@rand]
+:::
 
 ## Prerequisites
 
@@ -41,8 +46,10 @@ by the end of this session you will able to:
 -   explain the rationale for writing packages
 -   describe the different states a package can be in
 -   create a minimal package and explain its key components
+-   add functions with `usethis:use_r()`
 -   use the package interactively with `devtools::load_all()`
 -   use `devtools::check()` to execute `R CMD` check
+-   add a license with `usethis::use_mit_license()`
 -   add documentation using **`roxygen2`** and `devtools::document()`
 -   add package dependencies with `usethis::use_package()`
 
@@ -145,7 +152,7 @@ BiocManager::install("celaref")
 
 ## Where do packages live?
 
-In a library!
+In a library! In
 
 ```{r}
 #| eval: true
@@ -349,6 +356,8 @@ Be deliberate about where you create your package
 
 Do not nest inside another RStudio project, R package or git repo.
 
+🎬 Create a package:
+
 ```{r}
 usethis::create_package("~/Desktop/mypackage")
 ```
@@ -438,7 +447,7 @@ usethis::use_r("file_name")
 
 ## `usethis::use_r()`
 
-Create a new R file in your package called `animal_sounds.R`
+🎬 Create a new R file in your package called `animal_sounds.R`
 
 . . .
 
@@ -448,7 +457,6 @@ usethis::use_r("animal_sounds")
 
 . . .
 
-
 ```{r}
 #| code-line-numbers: "|3"
 √ Setting active project to 'C:/Users/er13/Desktop/mypackage'
@@ -456,11 +464,9 @@ usethis::use_r("animal_sounds")
 • Call \`use_test()\` to create a matching test file
 ```
 
-
-
 ## Add the function
 
-Put the following code into your script:
+🎬 Put the following code into your script:
 
 ```{r}
 #| code-line-numbers: "|2-4"
@@ -495,7 +501,7 @@ but when building packages we use a `devtools` approach
 
 ## `devtools::load_all()`
 
-Load with `devtools::load_all()`.
+🎬 Load package with `devtools::load_all()`.
 
 ```{r}
 devtools::load_all()
@@ -515,18 +521,13 @@ animal_sounds("dog", "woof")
 
 ## `devtools::load_all()`
 
-Change some tiny thing about your function - maybe the animal "says" instead of "goes"?
-
+🎬 Change some tiny thing about your function - maybe the animal "says" instead of "goes"?
 
 . . .
 
-
-
-Load with `devtools::load_all()` and test the updated function.
-
+🎬 Load with `devtools::load_all()` and test the updated function.
 
 # Check your package
-
 
 ## Check your package
 
@@ -538,7 +539,7 @@ However, `devtools` has the `check()` function to allow you to run this without 
 
 ## `devtools::check()`
 
-Check your package
+🎬 Check your package
 
 ```{r}
 devtools::check()
@@ -563,12 +564,177 @@ You will get lots of output ending with:
 0 errors √ | 2 warnings x | 0 notes √
 ```
 
-## Document your functions
+## Aside: in case of error
 
-insert roxygen skeleton
+On running `devtools::check()` you may get an error if you are using a networked drive.
 
-`devtools::document()`
+    Updating mypackage documentation  
+    Error: The specified file is not readable: path-to\mypackage\NAMESPACE
 
-## Add package dependencies
+This is covered [here](https://stackoverflow.com/questions/40530968/overwriting-namespace-and-rd-with-roxygen2) and can be fixed.
+
+## Aside: in case of error
+
+Save a copy of this file:
+
+[fix_for_networked_drives.R](https://forwards.github.io/workshops/package-dev-modules/slides/03-your-first-package/fix_for_networked_drives.R)
+
+Save it somewhere other than the `mypackage` directory
+
+Open the file from the `mypackage` project session
+
+Run the whole file
+
+You should now find that `devtools::check()` proceeds normally
+
+# License
+
+## Add a license
+
+`usethis` helps out again! `use_mit_license()`, `use_agpl_license()`, `use_ccby_license()` etc
+
+🎬 Add a MIT license[^1] - use your own name!
+
+[^1]: MIT: Simple and permissive license that lets people use and freely distribute your code
+
+```{r}
+usethis::use_mit_license("Emma Rand") 
+```
+
+. . .
+
+🎬 What files have appeared?
+
+🎬 How has the `DESCRIPTION` file changed?
+
+🎬 Run `devtools::check()` again. Has one of the warnings disappeared?
+
+# Document your package
+
+## Levels of package documentation
+
+-   Metadata: The `DESCRIPTION` file -- an overview of "what's in this package?"
+
+-   Object documentation: Documentation for each of the exported functions and datasets in the package, along with examples of usage
+
+-   Vignettes: Long form documentation, generally discussing how to use a number of functions from the - package together and/or how a package fits into a larger ecosystem of packages
+
+-   pkgdown sites: Websites for your package!
+
+## Metadata in `DESCRIPTION` {.smaller}
+
+-   Title: One line, title case, with no period. Fewer than 65 characters.
+
+-   Version
+
+    -   for release: MAJOR.MINOR.PATCH version.
+    -   for development version building on version MAJOR.MINOR.PATCH, use: MAJOR.MINOR.PATCH.9000
+
+-   Authors\@R: "aut" means author, "cre" means creator, "ctb" means contributor.
+
+-   Description: One paragraph describing what the package does. Keep the width of the paragraph to 80 characters; indent subsequent lines with 4 spaces.
+
+-   License
+
+-   Encoding: How to encode text, use UTF-8 encoding.
+
+-   LazyData: Use true to lazy-load data sets in the package.
+
+## Update `DESCRIPTION`
+
+🎬 Add a title and description.
+
+🎬 Add yourself as an author and creator.
+
+## Object documentation
+
+Object documentation is what you see when you use `?` or `help()` to find out more about a function or a dataset in a package.
+
+We will create object documentation using Roxygen comments, which start with #'
+
+Much of the work is done by the `roxygen2` package, but we won't directly run `roxygen2` functions, instead run functions from devtools that call them
+
+## Object documentation workflow
+
+-   Add roxygen comments to your .R files.
+
+-   Run `devtools::document()` to convert roxygen comments to .Rd files.
+
+-   Load the current version fo the package with `devtools::load_all()`
+
+-   Preview documentation with `?`
+
+-   Rinse and repeat until the documentation looks the way you want.
+
+## Document your function
+
+🎬 Open animal_sounds.R
+
+🎬 Go to Code \> Insert Roxygen Documentation
+
+🎬 Fill in the documentation: Give your function a title, then, in a new paragraph, a brief description, define the two parameters, and finally, describe what the function returns
+
+🎬 Save `animal_sounds.R`, run `devtools::document()` followed by `devtools::load_all()`
+
+🎬 Preview the documentation with `?animal_sounds` and edit your documentation if anything needs to be changed
+
+## Add examples
+
+🎬 Under `@examples`, add one example for using your function
+
+🎬 Save `animal_sounds.R`, run `devtools::document()` followed by `devtools::load_all()`
+
+🎬 Preview the documentation with `?animal_sounds` and edit your documentation if anything needs to be changed
+
+# Package dependencies
+
+## Remember this?
+
+```{r}
+-- R CMD check results -------------------- mypackage 0.0.0.9000 ----
+  Duration: 12.5s
+
+> checking dependencies in R code ... WARNING
+  '::' or ':::' import not declared from: 'assertthat'
+0 errors √ | 1 warnings x | 0 notes √
+```
+
+. . .
+
+-   We have used a function from the `assertthat` package in a function in our package
+
+-   But we haven't declared that officially, we need to do that
+
+## Package dependencies
+
+-   **Imports**: Packages listed here must be installed for your package to work. If they're not, they will get installed along with the package you're installing.
+-   **Suggests**: Packages listed here are used by your package, but not required for your package. You might use suggested packages for example datasets, to run tests, build vignettes, or maybe there's only one function that needs the package.
+-   **Depends**: Avoid where possible, but you might use it to require a specific version of R, e.g. Depends: R (\>= 3.4.0). Think critically before doing this as it will have downstream effects on other packages that depend on your package.
+
+## Package Imports
+
+`usethis::use_package()` is there for us again! It defaults to imports[^2]
+
+[^2]: Use the `type` aregument to add as a Suggest: `usethis::use_package("assertthat",type = "Suggests")`
+
+🎬 Use `usethis::use_package()` to add the `assertthat` package to `Imports`
+
+. . .
+
+```{r}
+usethis::use_package("assertthat") # Defaults to imports
+#> ✓ Adding 'assertthat' to Imports field in DESCRIPTION
+#> • Refer to functions with `assertthat::fun()`
+```
+
+## Package Imports
+
+🎬 How your `DESCRIPTION` file changed?
+
+🎬 Run `devtools::check()` again. Has the warning disappeared?
+
+# 📦 Woo hoo📦 <BR> You made a package!
+
+## Summary
 
 ## References {.smaller}

@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-  <meta charset="utf-8">
-  <meta name="generator" content="quarto-0.9.214">
-  <meta name="author" content="Emma Rand">
-  <title>📦 You can make an R package too!</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="minimal-package_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="minimal-package_files/libs/revealjs/dist/reveal.css">
-  <style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.214">
+<meta name="author" content="Emma Rand">
+<title>📦 You can make an R package too!</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<link rel="stylesheet" href="minimal-package_files/libs/revealjs/dist/reset.css">
+<link rel="stylesheet" href="minimal-package_files/libs/revealjs/dist/reveal.css">
+<style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -99,22 +100,17 @@
       margin-left: 2em;
     }
   </style>
-  <link rel="stylesheet" href="minimal-package_files/libs/revealjs/dist/theme/quarto.css" id="theme">
-
-  <script src="minimal-package_files/libs/clipboard/clipboard.min.js"></script>
-  <script src="minimal-package_files/libs/quarto-html/tabby.min.js"></script>
-  <script src="minimal-package_files/libs/quarto-html/popper.min.js"></script>
-  <script src="minimal-package_files/libs/quarto-html/tippy.umd.min.js"></script>
-  <link href="minimal-package_files/libs/quarto-html/tippy.css" rel="stylesheet">
-  <link href="minimal-package_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet">
-  <link id="quarto-text-highlighting-styles" href="minimal-package_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet">
-  <link href="minimal-package_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="minimal-package_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="minimal-package_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="minimal-package_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="minimal-package_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="minimal-package_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
+<link rel="stylesheet" href="minimal-package_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+<script src="minimal-package_files/libs/clipboard/clipboard.min.js"></script><script src="minimal-package_files/libs/quarto-html/tabby.min.js"></script><script src="minimal-package_files/libs/quarto-html/popper.min.js"></script><script src="minimal-package_files/libs/quarto-html/tippy.umd.min.js"></script><link href="minimal-package_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="minimal-package_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet">
+<link id="quarto-text-highlighting-styles" href="minimal-package_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet">
+<link href="minimal-package_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+<link href="minimal-package_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+<link href="minimal-package_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+<link href="minimal-package_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+<link href="minimal-package_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+<link href="minimal-package_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+<style type="text/css">
 
   .callout {
     margin-top: 1em;
@@ -312,7 +308,7 @@
   }
 
   </style>
-  <style type="text/css">
+<style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -404,73 +400,64 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="center">
-  <h1 class="title">📦<br>You can make an R package too!</h1>
+<section id="title-slide" class="center"><h1 class="title">📦<br>You can make an R package too!</h1>
   <p class="subtitle">UoY, Bioinformatics group</p>
   <p class="author">Emma Rand</p>
   <p class="date"><br>🔗 <a href="https://bit.ly/3mma-dda">bit.ly/3mma-dda</a></p>
-</section>
-
-<section id="summary" class="slide level2">
-<h2>Summary</h2>
+</section><section id="summary" class="slide level2"><h2>Summary</h2>
 <ul>
 <li>Why make a package?</li>
 <li>Where packages come from and where do they live?</li>
 <li>Package States</li>
-<li>How to make a minimal documented package and check it</li>
+<li>How to make a minimal documented package and check it using the <code>devtools</code><span class="citation" data-cites="wickham2021">(<a href="#/ref-wickham2021" role="doc-biblioref" onclick="return false;">Wickham et al. 2021</a>)</span> approach</li>
 <li>Components of a minimal package</li>
 </ul>
-</section>
-<section id="prerequisites" class="slide level2">
-<h2>Prerequisites</h2>
+
+<aside><div>
+<p>Based on <a href="https://r-pkgs.org/">R Packages</a> <span class="citation" data-cites="wickham2020">(<a href="#/ref-wickham2020" role="doc-biblioref" onclick="return false;">Wickham and Bryan 2020</a>)</span>, Data Science for Modern and Open Research: You can make an R package too! <span class="citation" data-cites="rand2021">(<a href="#/ref-rand2021" role="doc-biblioref" onclick="return false;">Rand 2021</a>)</span>, <a href="https://github.com/forwards/workshops">Forwards Package development modules</a> <span class="citation" data-cites="rand">(<a href="#/ref-rand" role="doc-biblioref" onclick="return false;">Rand and Cetinkaya-Rundel, n.d.</a>)</span></p>
+</div></aside></section><section id="prerequisites" class="slide level2"><h2>Prerequisites</h2>
 <p>You should have</p>
 <ul>
 <li>R and RStudio</li>
 <li>R build toolchain: Rtools(windows) or XCode (mac) or r-base-dev</li>
-<li><code>devtools</code> and <code>assertthat</code></li>
+<li>
+<code>devtools</code> and <code>assertthat</code>
+</li>
 <li>optionally git, a GitHub account and verified it can talk to RStudio</li>
-</ul>
-</section>
-<section id="learning-objectives" class="slide level2 smaller">
-<h2>Learning Objectives</h2>
+</ul></section><section id="learning-objectives" class="slide level2 smaller"><h2>Learning Objectives</h2>
 <p>by the end of this session you will able to:</p>
 <ul>
 <li>explain the rationale for writing packages</li>
 <li>describe the different states a package can be in</li>
 <li>create a minimal package and explain its key components</li>
-<li>use the package interactively with <code>devtools::load_all()</code></li>
-<li>use <code>devtools::check()</code> to execute <code>R CMD</code> check</li>
-<li>add documentation using <strong><code>roxygen2</code></strong> and <code>devtools::document()</code></li>
-<li>add package dependencies with <code>usethis::use_package()</code></li>
-</ul>
-</section>
-<section>
-<section id="why-make-a-package" class="title-slide slide level1 center">
-<h1>Why make a package?</h1>
+<li>add functions with <code>usethis:use_r()</code>
+</li>
+<li>use the package interactively with <code><a href="https://devtools.r-lib.org/reference/load_all.html">devtools::load_all()</a></code>
+</li>
+<li>use <code><a href="https://devtools.r-lib.org/reference/check.html">devtools::check()</a></code> to execute <code>R CMD</code> check</li>
+<li>add a license with <code><a href="https://usethis.r-lib.org/reference/licenses.html">usethis::use_mit_license()</a></code>
+</li>
+<li>add documentation using <strong><code>roxygen2</code></strong> and <code><a href="https://devtools.r-lib.org/reference/document.html">devtools::document()</a></code>
+</li>
+<li>add package dependencies with <code><a href="https://usethis.r-lib.org/reference/use_package.html">usethis::use_package()</a></code>
+</li>
+</ul></section><section><section id="why-make-a-package" class="title-slide slide level1 center"><h1>Why make a package?</h1>
 
-</section>
-<section id="why-make-a-package-1" class="slide level2">
-<h2>Why make a package?</h2>
+</section><section id="why-make-a-package-1" class="slide level2"><h2>Why make a package?</h2>
 <p>Conventionally:</p>
 <ul>
 <li>Package developers</li>
 <li>Generalisable analytical methods</li>
 <li>For use on other data</li>
 <li>Public release</li>
-</ul>
-</section>
-<section id="why-make-a-package-2" class="slide level2">
-<h2>Why make a package?</h2>
+</ul></section><section id="why-make-a-package-2" class="slide level2"><h2>Why make a package?</h2>
 <p>Package up your data analysis project!</p>
 <ul>
 <li>You don’t need to have a collection of highly generalisation functions</li>
 <li>You don’t need to share it with anyone else</li>
 <li>If you are already trying to work reproducibly you are almost doing it anyway!</li>
 <li>But it will help you do it better</li>
-</ul>
-</section>
-<section id="why-make-a-package-3" class="slide level2">
-<h2>Why make a package?</h2>
+</ul></section><section id="why-make-a-package-3" class="slide level2"><h2>Why make a package?</h2>
 <p>If you are already trying to work reproducibly you are almost doing it anyway!</p>
 <pre><code>/stem-cell-proteomic
    /data-raw
@@ -481,18 +468,17 @@
    report.Rmd
    stem-cell-proteomic.RProj</code></pre>
 <p>… making a package is just a short step beyond that</p>
-</section>
-<section id="script-vs-package" class="slide level2">
-<h2>Script vs package</h2>
+</section><section id="script-vs-package" class="slide level2"><h2>Script vs package</h2>
 <div class="columns">
 <div class="column" style="width:35%;">
 <h3 id="script">Script</h3>
 <ul>
 <li>one-off data analysis</li>
 <li>defined by <code>.R</code> extension</li>
-<li><code>library()</code> calls</li>
+<li>
+<code><a href="https://rdrr.io/r/base/library.html">library()</a></code> calls</li>
 <li>documentation in # comments</li>
-<li><code>source()</code></li>
+<li><code><a href="https://rdrr.io/r/base/source.html">source()</a></code></li>
 </ul>
 </div><div class="column" style="width:65%;">
 <h3 id="package">Package</h3>
@@ -505,26 +491,18 @@
 </ul>
 </div>
 </div>
-</section>
-<section id="be-nice-to-future-you" class="slide level2">
-<h2>Be nice to future you</h2>
+</section><section id="be-nice-to-future-you" class="slide level2"><h2>Be nice to future you</h2>
 
-<img data-src="images/future_you.png" alt="Person working at a computer with an offstage person asking &quot;How is the analysis going?&quot; The person at the computer replies &quot;Can't understand the data...and the data collector does not answer my emails or calls&quot; Person offstage: &quot;That's terrible! So cruel! Who did collect the data? I will sack them!&quot; Person at the computer: &quot;um...I did, 3 years ago&quot;" class="r-stretch quarto-figure-center"><p class="caption">Future self: CC-BY-NC, by Julen Colomb, derived from Randall Munroe cartoon</p></section>
-<section id="to-avoid" class="slide level2">
-<h2>To avoid</h2>
+<img data-src="images/future_you.png" alt="Person working at a computer with an offstage person asking &quot;How is the analysis going?&quot; The person at the computer replies &quot;Can't understand the data...and the data collector does not answer my emails or calls&quot; Person offstage: &quot;That's terrible! So cruel! Who did collect the data? I will sack them!&quot; Person at the computer: &quot;um...I did, 3 years ago&quot;" class="r-stretch quarto-figure-center"><p class="caption">Future self: CC-BY-NC, by Julen Colomb, derived from Randall Munroe cartoon</p></section><section id="to-avoid" class="slide level2"><h2>To avoid</h2>
 <iframe src="https://giphy.com/embed/M11UVCRrc0LUk" width="480" height="277" frameborder="0" class="giphy-embed" allowfullscreen="">
 </iframe>
 <p>
-</p><p><a href="https://giphy.com/gifs/M11UVCRrc0LUk">via GIPHY</a></p>
-<p></p>
-</section></section>
-<section>
-<section id="where-packages-come-from-and-live" class="title-slide slide level1 center">
-<h1>Where packages come from and live?</h1>
+</p>
+<p><a href="https://giphy.com/gifs/M11UVCRrc0LUk">via GIPHY</a></p>
 
-</section>
-<section id="where-do-r-packages-come-from" class="slide level2">
-<h2>Where do R packages come from?</h2>
+</section></section><section><section id="where-packages-come-from-and-live" class="title-slide slide level1 center"><h1>Where packages come from and live?</h1>
+
+</section><section id="where-do-r-packages-come-from" class="slide level2"><h2>Where do R packages come from?</h2>
 <p>CRAN:</p>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">install.packages</span>(<span class="st">"praise"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -537,10 +515,8 @@
 <div class="cell">
 <div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">"celaref"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="where-do-packages-live" class="slide level2">
-<h2>Where do packages live?</h2>
-<p>In a library!</p>
+</section><section id="where-do-packages-live" class="slide level2"><h2>Where do packages live?</h2>
+<p>In a library! In</p>
 <div class="cell">
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">R.home</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
@@ -549,9 +525,7 @@
 </div>
 <p>The R home directory is the top-level directory of your R installation.</p>
 <p>Note: this is <strong>not</strong> the same as your working directory or your home directory.</p>
-</section>
-<section id="your-r-installation" class="slide level2">
-<h2>Your R installation</h2>
+</section><section id="your-r-installation" class="slide level2"><h2>Your R installation</h2>
 <div class="cell">
 <div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">list.files</span>(<span class="fu">R.home</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
@@ -562,18 +536,14 @@
 [17] "unins000.exe"  </code></pre>
 </div>
 </div>
-</section>
-<section id="your-library" class="slide level2">
-<h2>Your library</h2>
+</section><section id="your-library" class="slide level2"><h2>Your library</h2>
 <div class="cell">
 <div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>.Library</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>[1] "C:/PROGRA~1/R/R-41~1.3/library"</code></pre>
 </div>
 </div>
-</section>
-<section id="your-library-1" class="slide level2">
-<h2>Your library</h2>
+</section><section id="your-library-1" class="slide level2"><h2>Your library</h2>
 <div class="cell">
 <div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">dir</span>(.Library)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
@@ -586,48 +556,43 @@
  [25] "compiler"       "cpp11"          "crayon"         "credentials"   
  [29] "curl"           "data.table"     "datasets"       "DBI"           
  [33] "dbplyr"         "desc"           "devtools"       "diffobj"       
- [37] "digest"         "dplyr"          "dtplyr"         "ellipsis"      
- [41] "evaluate"       "fansi"          "farver"         "fastmap"       
- [45] "forcats"        "foreign"        "fs"             "gargle"        
- [49] "generics"       "gert"           "ggplot2"        "gh"            
- [53] "gitcreds"       "glue"           "googledrive"    "googlesheets4" 
- [57] "graphics"       "grDevices"      "grid"           "gtable"        
- [61] "haven"          "highr"          "hms"            "htmltools"     
- [65] "httpuv"         "httr"           "ids"            "ini"           
- [69] "isoband"        "jquerylib"      "jsonlite"       "KernSmooth"    
- [73] "knitr"          "labeling"       "later"          "lattice"       
- [77] "lifecycle"      "lubridate"      "magrittr"       "markdown"      
- [81] "MASS"           "Matrix"         "memoise"        "methods"       
- [85] "mgcv"           "mime"           "modelr"         "munsell"       
- [89] "nlme"           "nnet"           "openssl"        "parallel"      
- [93] "pillar"         "pkgbuild"       "pkgconfig"      "pkgload"       
- [97] "praise"         "prettyunits"    "processx"       "progress"      
-[101] "promises"       "ps"             "purrr"          "R6"            
-[105] "rappdirs"       "rcmdcheck"      "RColorBrewer"   "Rcpp"          
-[109] "readr"          "readxl"         "rematch"        "rematch2"      
-[113] "remotes"        "reprex"         "rlang"          "rmarkdown"     
-[117] "roxygen2"       "rpart"          "rprojroot"      "rstudioapi"    
-[121] "rversions"      "rvest"          "sass"           "scales"        
-[125] "selectr"        "servr"          "sessioninfo"    "spatial"       
-[129] "splines"        "stats"          "stats4"         "stringi"       
-[133] "stringr"        "survival"       "sys"            "tcltk"         
-[137] "testthat"       "tibble"         "tidyr"          "tidyselect"    
-[141] "tidyverse"      "tinytex"        "tools"          "translations"  
-[145] "tzdb"           "usethis"        "utf8"           "utils"         
-[149] "uuid"           "vctrs"          "viridisLite"    "vroom"         
-[153] "waldo"          "whisker"        "withr"          "xaringan"      
-[157] "xaringanthemer" "xfun"           "xml2"           "xopen"         
-[161] "yaml"           "zip"           </code></pre>
+ [37] "digest"         "downlit"        "dplyr"          "dtplyr"        
+ [41] "ellipsis"       "emo"            "evaluate"       "fansi"         
+ [45] "farver"         "fastmap"        "forcats"        "foreign"       
+ [49] "fs"             "gargle"         "generics"       "gert"          
+ [53] "ggplot2"        "gh"             "gitcreds"       "glue"          
+ [57] "googledrive"    "googlesheets4"  "graphics"       "grDevices"     
+ [61] "grid"           "gtable"         "haven"          "highr"         
+ [65] "hms"            "htmltools"      "httpuv"         "httr"          
+ [69] "ids"            "ini"            "isoband"        "jquerylib"     
+ [73] "jsonlite"       "KernSmooth"     "knitr"          "labeling"      
+ [77] "later"          "lattice"        "lifecycle"      "lubridate"     
+ [81] "magrittr"       "markdown"       "MASS"           "Matrix"        
+ [85] "memoise"        "methods"        "mgcv"           "mime"          
+ [89] "modelr"         "munsell"        "nlme"           "nnet"          
+ [93] "openssl"        "parallel"       "pillar"         "pkgbuild"      
+ [97] "pkgconfig"      "pkgload"        "praise"         "prettyunits"   
+[101] "processx"       "progress"       "promises"       "ps"            
+[105] "purrr"          "R6"             "rappdirs"       "rcmdcheck"     
+[109] "RColorBrewer"   "Rcpp"           "readr"          "readxl"        
+[113] "rematch"        "rematch2"       "remotes"        "reprex"        
+[117] "rlang"          "rmarkdown"      "roxygen2"       "rpart"         
+[121] "rprojroot"      "rstudioapi"     "rversions"      "rvest"         
+[125] "sass"           "scales"         "selectr"        "servr"         
+[129] "sessioninfo"    "spatial"        "splines"        "stats"         
+[133] "stats4"         "stringi"        "stringr"        "survival"      
+[137] "sys"            "tcltk"          "testthat"       "tibble"        
+[141] "tidyr"          "tidyselect"     "tidyverse"      "tinytex"       
+[145] "tools"          "translations"   "tzdb"           "usethis"       
+[149] "utf8"           "utils"          "uuid"           "vctrs"         
+[153] "viridisLite"    "vroom"          "waldo"          "whisker"       
+[157] "withr"          "xaringan"       "xaringanthemer" "xfun"          
+[161] "xml2"           "xopen"          "yaml"           "zip"           </code></pre>
 </div>
 </div>
-</section></section>
-<section>
-<section id="package-states" class="title-slide slide level1 center">
-<h1>Package states</h1>
+</section></section><section><section id="package-states" class="title-slide slide level1 center"><h1>Package states</h1>
 
-</section>
-<section id="package-states-1" class="slide level2">
-<h2>Package states</h2>
+</section><section id="package-states-1" class="slide level2"><h2>Package states</h2>
 <p>There are five states a package can be in:</p>
 <ul>
 <li><p>source</p></li>
@@ -639,16 +604,12 @@
 
 <aside><div>
 <p>Having a understanding of the different states a package can be in is helpful in understanding package development.</p>
-</div></aside></section>
-<section id="package-states-2" class="slide level2">
-<h2>Package states</h2>
+</div></aside></section><section id="package-states-2" class="slide level2"><h2>Package states</h2>
 
 
 <img data-src="images/installation.png" alt="schematic of package states and the functions that move them between states. One the horizontal axis: source, bundle, binary, installed, in memory. One the vertical axis the functions install.packages, R CMD install, install, build, install_github" class="r-stretch"><aside><div>
 <p>Figure from <a href="https://r-pkgs.org/">R Packages</a> <span class="citation" data-cites="wickham2020">(<a href="#/ref-wickham2020" role="doc-biblioref" onclick="return false;">Wickham and Bryan 2020</a>)</span></p>
-</div></aside></section>
-<section id="package-states-3" class="slide level2">
-<h2>Package states</h2>
+</div></aside></section><section id="package-states-3" class="slide level2"><h2>Package states</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <ul>
@@ -665,9 +626,7 @@
 <p>Specific directory structure with some particular components e.g., <code>DESCRIPTION</code>, an <code>R/</code> directory.</p>
 </div>
 </div>
-</section>
-<section id="package-states-4" class="slide level2">
-<h2>Package states</h2>
+</section><section id="package-states-4" class="slide level2"><h2>Package states</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <ul>
@@ -688,9 +647,7 @@
 <p>What you create and work on.</p>
 </div>
 </div>
-</section>
-<section id="package-states-5" class="slide level2">
-<h2>Package states</h2>
+</section><section id="package-states-5" class="slide level2"><h2>Package states</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <ul>
@@ -707,12 +664,10 @@
 <p>Also a single file</p>
 <p>Platform specific: <code>.tgz</code> (Mac) <code>.zip</code> (Windows)</p>
 <p>Package developers submit a bundle to CRAN; CRAN makes and distributes binaries</p>
-<p><code>install.packages()</code></p>
+<p><code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code></p>
 </div>
 </div>
-</section>
-<section id="package-states-6" class="slide level2">
-<h2>Package states</h2>
+</section><section id="package-states-6" class="slide level2"><h2>Package states</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <ul>
@@ -729,9 +684,7 @@
 <p>Command line tool <code>R CMD INSTALL</code> powers all package installation</p>
 </div>
 </div>
-</section>
-<section id="package-states-7" class="slide level2">
-<h2>Package states</h2>
+</section><section id="package-states-7" class="slide level2"><h2>Package states</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <ul>
@@ -744,30 +697,24 @@
 </div></li>
 </ul>
 </div><div class="column" style="background-color: #707070">
-<p>If a package is installed, <code>library()</code> makes its function available by loading the package into memory and attaching it to the search path.</p>
-<p>We do not use <code>library()</code> for packages we are working on</p>
-<p><code>devtools::load_all()</code> loads a source package directly into memory.</p>
+<p>If a package is installed, <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> makes its function available by loading the package into memory and attaching it to the search path.</p>
+<p>We do not use <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> for packages we are working on</p>
+<p><code><a href="https://devtools.r-lib.org/reference/load_all.html">devtools::load_all()</a></code> loads a source package directly into memory.</p>
 </div>
 </div>
-</section></section>
-<section>
-<section id="create-a-package" class="title-slide slide level1 center">
-<h1>Create a package!</h1>
+</section></section><section><section id="create-a-package" class="title-slide slide level1 center"><h1>Create a package!</h1>
 
-</section>
-<section id="create-a-package-1" class="slide level2">
-<h2>Create a package</h2>
+</section><section id="create-a-package-1" class="slide level2"><h2>Create a package</h2>
 <p>Be deliberate about where you create your package</p>
 <p>Do not nest inside another RStudio project, R package or git repo.</p>
+<p>🎬 Create a package:</p>
 <div class="cell">
 <div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>usethis<span class="sc">::</span><span class="fu">create_package</span>(<span class="st">"~/Desktop/mypackage"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <aside><div>
 <p>You may want a different path</p>
-</div></aside></section>
-<section id="section" class="slide level2 smaller">
-<h2></h2>
+</div></aside></section><section id="section" class="slide level2 smaller"><h2></h2>
 <div class="cell">
 <div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>√ Creating <span class="st">'C:/Users/er13/Desktop/mypackage/'</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a>√ Setting active project to <span class="st">'C:/Users/er13/Desktop/mypackage'</span></span>
@@ -792,9 +739,7 @@
 <span id="cb14-21"><a href="#cb14-21"></a>√ Opening <span class="st">'C:/Users/er13/Desktop/mypackage/'</span> <span class="cf">in</span> new RStudio session</span>
 <span id="cb14-22"><a href="#cb14-22"></a>√ Setting active project to <span class="st">'\&lt;no active project\&gt;'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="create_package" class="slide level2">
-<h2><code>create_package()</code></h2>
+</section><section id="create_package" class="slide level2"><h2><code>create_package()</code></h2>
 <p>What happens when we run <code>create_package()</code>?</p>
 <ul>
 <li><p>R will create a folder called <code>mypackage</code> which is a package and an RStudio project</p></li>
@@ -805,9 +750,7 @@
 
 <aside><div>
 <p>continued…..</p>
-</div></aside></section>
-<section id="create_package-1" class="slide level2">
-<h2><code>create_package()</code></h2>
+</div></aside></section><section id="create_package-1" class="slide level2"><h2><code>create_package()</code></h2>
 <p>What happens when we run <code>create_package()</code>?</p>
 <ul>
 <li><p><code>mypackage.Rproj</code> is the file that makes this directory an RStudio Project.</p></li>
@@ -818,27 +761,20 @@
 
 <aside><div>
 <p>continued…..</p>
-</div></aside></section>
-<section id="create_package-2" class="slide level2">
-<h2><code>create_package()</code></h2>
+</div></aside></section><section id="create_package-2" class="slide level2"><h2><code>create_package()</code></h2>
 <p>What happens when we run <code>create_package()</code>?</p>
 <ul>
 <li><p><code>.Rbuildignore</code> lists files that we need but that should not be included when building the R package from source.</p></li>
 <li><p><code>.gitignore</code> anticipates Git usage and ignores some standard, behind-the-scenes files created by R and RStudio.</p></li>
-</ul>
-</section>
-<section id="add-a-function" class="slide level2">
-<h2>Add a function</h2>
+</ul></section><section id="add-a-function" class="slide level2"><h2>Add a function</h2>
 <p>Functions will go in an <code>.R</code> file.</p>
 <p>There’s a <code>usethis</code> helper for adding <code>.R</code> files!</p>
 <div class="cell">
 <div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>usethis<span class="sc">::</span><span class="fu">use_r</span>(<span class="st">"file_name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><code>usethis::use_r()</code> adds the file extension and saves in <code>R/</code> folder</p>
-</section>
-<section id="usethisuse_r" class="slide level2">
-<h2><code>usethis::use_r()</code></h2>
-<p>Create a new R file in your package called <code>animal_sounds.R</code></p>
+<p><code><a href="https://usethis.r-lib.org/reference/use_r.html">usethis::use_r()</a></code> adds the file extension and saves in <code>R/</code> folder</p>
+</section><section id="usethisuse_r" class="slide level2"><h2><code>usethis::use_r()</code></h2>
+<p>🎬 Create a new R file in your package called <code>animal_sounds.R</code></p>
 <div class="fragment">
 <div class="cell">
 <div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>usethis<span class="sc">::</span><span class="fu">use_r</span>(<span class="st">"animal_sounds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -851,10 +787,8 @@
 <span id="cb17-3"><a href="#cb17-3"></a>• Call \<span class="st">`</span><span class="at">use_test()\</span><span class="st">`</span> to create a matching test file</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</section>
-<section id="add-the-function" class="slide level2">
-<h2>Add the function</h2>
-<p>Put the following code into your script:</p>
+</section><section id="add-the-function" class="slide level2"><h2>Add the function</h2>
+<p>🎬 Put the following code into your script:</p>
 <div class="cell">
 <div class="sourceCode" id="cb18" data-code-line-numbers="|2-4"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>animal_sounds <span class="ot">&lt;-</span> <span class="cf">function</span>(animal, sound) {</span>
 <span id="cb18-2"><a href="#cb18-2"></a>  assertthat<span class="sc">::</span><span class="fu">assert_that</span>(</span>
@@ -864,14 +798,9 @@
 <span id="cb18-6"><a href="#cb18-6"></a>  <span class="fu">paste0</span>(<span class="st">"The "</span>, animal, <span class="st">" goes "</span>, sound, <span class="st">"!"</span>)</span>
 <span id="cb18-7"><a href="#cb18-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section></section>
-<section>
-<section id="test-your-function" class="title-slide slide level1 center">
-<h1>Test your function</h1>
+</section></section><section><section id="test-your-function" class="title-slide slide level1 center"><h1>Test your function</h1>
 
-</section>
-<section id="development-workflow" class="slide level2">
-<h2>Development workflow</h2>
+</section><section id="development-workflow" class="slide level2"><h2>Development workflow</h2>
 <p>In a normal script you might use:</p>
 <div class="cell">
 <div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">source</span>(<span class="st">"R/animal_sounds.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -879,59 +808,39 @@
 <div class="fragment">
 <p>but when building packages we use a <code>devtools</code> approach</p>
 </div>
-</section>
-<section id="development-workflow-1" class="slide level2">
-<h2>Development workflow</h2>
+</section><section id="development-workflow-1" class="slide level2"><h2>Development workflow</h2>
 
-<img data-src="images/dev_cycle_before_testing.png" alt="there are three boxes with arrow joining them clockwise. The boxes are (clockwise from 3' oclock) 'devtools::load_all() Cmd/Ctrl + Shift +L', 'Explore in console' and 'Modify code'" class="r-stretch quarto-figure-center"><p class="caption">Development workflow</p></section></section>
-<section>
-<section id="load-your-package" class="title-slide slide level1 center">
-<h1>Load your package</h1>
+<img data-src="images/dev_cycle_before_testing.png" alt="there are three boxes with arrow joining them clockwise. The boxes are (clockwise from 3' oclock) 'devtools::load_all() Cmd/Ctrl + Shift +L', 'Explore in console' and 'Modify code'" class="r-stretch quarto-figure-center"><p class="caption">Development workflow</p></section></section><section><section id="load-your-package" class="title-slide slide level1 center"><h1>Load your package</h1>
 
-</section>
-<section id="devtoolsload_all" class="slide level2">
-<h2><code>devtools::load_all()</code></h2>
-<p>Load with <code>devtools::load_all()</code>.</p>
+</section><section id="devtoolsload_all" class="slide level2"><h2><code>devtools::load_all()</code></h2>
+<p>🎬 Load package with <code><a href="https://devtools.r-lib.org/reference/load_all.html">devtools::load_all()</a></code>.</p>
 <div class="cell">
 <div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>devtools<span class="sc">::</span><span class="fu">load_all</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre><code>Loading mypackage</code></pre>
-</section>
-<section id="test" class="slide level2">
-<h2>Test</h2>
+</section><section id="test" class="slide level2"><h2>Test</h2>
 <p>Test the <code>animal_sounds()</code> function in the console.</p>
 <div class="cell">
 <div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">animal_sounds</span>(<span class="st">"dog"</span>, <span class="st">"woof"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre><code>[1] "The dog goes woof!"</code></pre>
-</section>
-<section id="devtoolsload_all-1" class="slide level2">
-<h2><code>devtools::load_all()</code></h2>
-<p>Change some tiny thing about your function - maybe the animal “says” instead of “goes”?</p>
+</section><section id="devtoolsload_all-1" class="slide level2"><h2><code>devtools::load_all()</code></h2>
+<p>🎬 Change some tiny thing about your function - maybe the animal “says” instead of “goes”?</p>
 <div class="fragment">
-<p>Load with <code>devtools::load_all()</code> and test the updated function.</p>
+<p>🎬 Load with <code><a href="https://devtools.r-lib.org/reference/load_all.html">devtools::load_all()</a></code> and test the updated function.</p>
 </div>
-</section></section>
-<section>
-<section id="check-your-package" class="title-slide slide level1 center">
-<h1>Check your package</h1>
+</section></section><section><section id="check-your-package" class="title-slide slide level1 center"><h1>Check your package</h1>
 
-</section>
-<section id="check-your-package-1" class="slide level2">
-<h2>Check your package</h2>
+</section><section id="check-your-package-1" class="slide level2"><h2>Check your package</h2>
 <p><code>R CMD check</code> is the gold standard for checking that an R package is in full working order.</p>
 <p>It is a programme that is executed in the shell.</p>
-<p>However, <code>devtools</code> has the <code>check()</code> function to allow you to run this without leaving your R session.</p>
-</section>
-<section id="devtoolscheck" class="slide level2">
-<h2><code>devtools::check()</code></h2>
-<p>Check your package</p>
+<p>However, <code>devtools</code> has the <code><a href="https://rdrr.io/r/utils/PkgUtils.html">check()</a></code> function to allow you to run this without leaving your R session.</p>
+</section><section id="devtoolscheck" class="slide level2"><h2><code>devtools::check()</code></h2>
+<p>🎬 Check your package</p>
 <div class="cell">
 <div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>devtools<span class="sc">::</span><span class="fu">check</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="devtoolscheck-1" class="slide level2">
-<h2><code>devtools::check()</code></h2>
+</section><section id="devtoolscheck-1" class="slide level2"><h2><code>devtools::check()</code></h2>
 <p>You will get lots of output ending with:</p>
 <div class="cell">
 <div class="sourceCode" id="cb25" data-code-line-numbers="|4-7|9-10"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="sc">--</span> R CMD check results <span class="sc">--------------------</span> mypackage <span class="dv">0</span>.<span class="dv">0</span>.<span class="fl">0.9000</span> <span class="sc">----</span></span>
@@ -946,47 +855,144 @@
 <span id="cb25-10"><a href="#cb25-10"></a>  <span class="st">'::'</span> or <span class="st">':::'</span> import not declared from<span class="sc">:</span> <span class="st">'assertthat'</span></span>
 <span id="cb25-11"><a href="#cb25-11"></a><span class="dv">0</span> errors √ <span class="sc">|</span> <span class="dv">2</span> warnings x <span class="sc">|</span> <span class="dv">0</span> notes √</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="document-your-functions" class="slide level2">
-<h2>Document your functions</h2>
-<p>insert roxygen skeleton</p>
-<p><code>devtools::document()</code></p>
-</section>
-<section id="add-package-dependencies" class="slide level2">
-<h2>Add package dependencies</h2>
-</section>
-<section id="references" class="slide level2 smaller scrollable">
-<h2>References</h2>
+</section><section id="aside-in-case-of-error" class="slide level2"><h2>Aside: in case of error</h2>
+<p>On running <code><a href="https://devtools.r-lib.org/reference/check.html">devtools::check()</a></code> you may get an error if you are using a networked drive.</p>
+<pre><code>Updating mypackage documentation  
+Error: The specified file is not readable: path-to\mypackage\NAMESPACE</code></pre>
+<p>This is covered <a href="https://stackoverflow.com/questions/40530968/overwriting-namespace-and-rd-with-roxygen2">here</a> and can be fixed.</p>
+</section><section id="aside-in-case-of-error-1" class="slide level2"><h2>Aside: in case of error</h2>
+<p>Save a copy of this file:</p>
+<p><a href="https://forwards.github.io/workshops/package-dev-modules/slides/03-your-first-package/fix_for_networked_drives.R">fix_for_networked_drives.R</a></p>
+<p>Save it somewhere other than the <code>mypackage</code> directory</p>
+<p>Open the file from the <code>mypackage</code> project session</p>
+<p>Run the whole file</p>
+<p>You should now find that <code><a href="https://devtools.r-lib.org/reference/check.html">devtools::check()</a></code> proceeds normally</p>
+</section></section><section><section id="license" class="title-slide slide level1 center"><h1>License</h1>
+
+</section><section id="add-a-license" class="slide level2"><h2>Add a license</h2>
+<p><code>usethis</code> helps out again! <code>use_mit_license()</code>, <code>use_agpl_license()</code>, <code>use_ccby_license()</code> etc</p>
+<p>🎬 Add a MIT license<sup>1</sup> - use your own name!</p>
+<div class="cell">
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>usethis<span class="sc">::</span><span class="fu">use_mit_license</span>(<span class="st">"Emma Rand"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p>🎬 What files have appeared?</p>
+<p>🎬 How has the <code>DESCRIPTION</code> file changed?</p>
+<p>🎬 Run <code><a href="https://devtools.r-lib.org/reference/check.html">devtools::check()</a></code> again. Has one of the warnings disappeared?</p>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn1" role="doc-endnote"><p>MIT: Simple and permissive license that lets people use and freely distribute your code</p></li></ol></aside></section></section><section><section id="document-your-package" class="title-slide slide level1 center"><h1>Document your package</h1>
+
+</section><section id="levels-of-package-documentation" class="slide level2"><h2>Levels of package documentation</h2>
+<ul>
+<li><p>Metadata: The <code>DESCRIPTION</code> file – an overview of “what’s in this package?”</p></li>
+<li><p>Object documentation: Documentation for each of the exported functions and datasets in the package, along with examples of usage</p></li>
+<li><p>Vignettes: Long form documentation, generally discussing how to use a number of functions from the - package together and/or how a package fits into a larger ecosystem of packages</p></li>
+<li><p>pkgdown sites: Websites for your package!</p></li>
+</ul></section><section id="metadata-in-description" class="slide level2 smaller"><h2>Metadata in <code>DESCRIPTION</code>
+</h2>
+<ul>
+<li><p>Title: One line, title case, with no period. Fewer than 65 characters.</p></li>
+<li>
+<p>Version</p>
+<ul>
+<li>for release: MAJOR.MINOR.PATCH version.</li>
+<li>for development version building on version MAJOR.MINOR.PATCH, use: MAJOR.MINOR.PATCH.9000</li>
+</ul>
+</li>
+<li><p>Authors@R: “aut” means author, “cre” means creator, “ctb” means contributor.</p></li>
+<li><p>Description: One paragraph describing what the package does. Keep the width of the paragraph to 80 characters; indent subsequent lines with 4 spaces.</p></li>
+<li><p>License</p></li>
+<li><p>Encoding: How to encode text, use UTF-8 encoding.</p></li>
+<li><p>LazyData: Use true to lazy-load data sets in the package.</p></li>
+</ul></section><section id="update-description" class="slide level2"><h2>Update <code>DESCRIPTION</code>
+</h2>
+<p>🎬 Add a title and description.</p>
+<p>🎬 Add yourself as an author and creator.</p>
+</section><section id="object-documentation" class="slide level2"><h2>Object documentation</h2>
+<p>Object documentation is what you see when you use <code>?</code> or <code>help()</code> to find out more about a function or a dataset in a package.</p>
+<p>We will create object documentation using Roxygen comments, which start with #’</p>
+<p>Much of the work is done by the <code>roxygen2</code> package, but we won’t directly run <code>roxygen2</code> functions, instead run functions from devtools that call them</p>
+</section><section id="object-documentation-workflow" class="slide level2"><h2>Object documentation workflow</h2>
+<ul>
+<li><p>Add roxygen comments to your .R files.</p></li>
+<li><p>Run <code><a href="https://devtools.r-lib.org/reference/document.html">devtools::document()</a></code> to convert roxygen comments to .Rd files.</p></li>
+<li><p>Load the current version fo the package with <code><a href="https://devtools.r-lib.org/reference/load_all.html">devtools::load_all()</a></code></p></li>
+<li><p>Preview documentation with <code>?</code></p></li>
+<li><p>Rinse and repeat until the documentation looks the way you want.</p></li>
+</ul></section><section id="document-your-function" class="slide level2"><h2>Document your function</h2>
+<p>🎬 Open animal_sounds.R</p>
+<p>🎬 Go to Code &gt; Insert Roxygen Documentation</p>
+<p>🎬 Fill in the documentation: Give your function a title, then, in a new paragraph, a brief description, define the two parameters, and finally, describe what the function returns</p>
+<p>🎬 Save <code>animal_sounds.R</code>, run <code><a href="https://devtools.r-lib.org/reference/document.html">devtools::document()</a></code> followed by <code><a href="https://devtools.r-lib.org/reference/load_all.html">devtools::load_all()</a></code></p>
+<p>🎬 Preview the documentation with <code>?animal_sounds</code> and edit your documentation if anything needs to be changed</p>
+</section><section id="add-examples" class="slide level2"><h2>Add examples</h2>
+<p>🎬 Under <code>@examples</code>, add one example for using your function</p>
+<p>🎬 Save <code>animal_sounds.R</code>, run <code><a href="https://devtools.r-lib.org/reference/document.html">devtools::document()</a></code> followed by <code><a href="https://devtools.r-lib.org/reference/load_all.html">devtools::load_all()</a></code></p>
+<p>🎬 Preview the documentation with <code>?animal_sounds</code> and edit your documentation if anything needs to be changed</p>
+</section></section><section><section id="package-dependencies" class="title-slide slide level1 center"><h1>Package dependencies</h1>
+
+</section><section id="remember-this" class="slide level2"><h2>Remember this?</h2>
+<div class="cell">
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="sc">--</span> R CMD check results <span class="sc">--------------------</span> mypackage <span class="dv">0</span>.<span class="dv">0</span>.<span class="fl">0.9000</span> <span class="sc">----</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a>  Duration<span class="sc">:</span> <span class="fl">12.5</span>s</span>
+<span id="cb28-3"><a href="#cb28-3"></a></span>
+<span id="cb28-4"><a href="#cb28-4"></a><span class="sc">&gt;</span> checking dependencies <span class="cf">in</span> R code ... WARNING</span>
+<span id="cb28-5"><a href="#cb28-5"></a>  <span class="st">'::'</span> or <span class="st">':::'</span> import not declared from<span class="sc">:</span> <span class="st">'assertthat'</span></span>
+<span id="cb28-6"><a href="#cb28-6"></a><span class="dv">0</span> errors √ <span class="sc">|</span> <span class="dv">1</span> warnings x <span class="sc">|</span> <span class="dv">0</span> notes √</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<ul>
+<li><p>We have used a function from the <code>assertthat</code> package in a function in our package</p></li>
+<li><p>But we haven’t declared that officially, we need to do that</p></li>
+</ul>
+</div>
+</section><section id="package-dependencies-1" class="slide level2"><h2>Package dependencies</h2>
+<ul>
+<li>
+<strong>Imports</strong>: Packages listed here must be installed for your package to work. If they’re not, they will get installed along with the package you’re installing.</li>
+<li>
+<strong>Suggests</strong>: Packages listed here are used by your package, but not required for your package. You might use suggested packages for example datasets, to run tests, build vignettes, or maybe there’s only one function that needs the package.</li>
+<li>
+<strong>Depends</strong>: Avoid where possible, but you might use it to require a specific version of R, e.g.&nbsp;Depends: R (&gt;= 3.4.0). Think critically before doing this as it will have downstream effects on other packages that depend on your package.</li>
+</ul></section><section id="package-imports" class="slide level2"><h2>Package Imports</h2>
+<p><code><a href="https://usethis.r-lib.org/reference/use_package.html">usethis::use_package()</a></code> is there for us again! It defaults to imports<sup>1</sup></p>
+<p>🎬 Use <code><a href="https://usethis.r-lib.org/reference/use_package.html">usethis::use_package()</a></code> to add the <code>assertthat</code> package to <code>Imports</code></p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>usethis<span class="sc">::</span><span class="fu">use_package</span>(<span class="st">"assertthat"</span>) <span class="co"># Defaults to imports</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="co">#&gt; ✓ Adding 'assertthat' to Imports field in DESCRIPTION</span></span>
+<span id="cb29-3"><a href="#cb29-3"></a><span class="co">#&gt; • Refer to functions with `assertthat::fun()`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn2" role="doc-endnote"><p>Use the <code>type</code> aregument to add as a Suggest: <code>usethis::use_package("assertthat",type = "Suggests")</code></p></li></ol></aside></section><section id="package-imports-1" class="slide level2"><h2>Package Imports</h2>
+<p>🎬 How your <code>DESCRIPTION</code> file changed?</p>
+<p>🎬 Run <code><a href="https://devtools.r-lib.org/reference/check.html">devtools::check()</a></code> again. Has the warning disappeared?</p>
+</section></section><section><section id="woo-hoo-you-made-a-package" class="title-slide slide level1 center"><h1>📦 Woo hoo📦 <br> You made a package!</h1>
+
+</section><section id="summary-1" class="slide level2"><h2>Summary</h2>
+</section><section id="references" class="slide level2 smaller scrollable"><h2>References</h2>
 <div class="footer footer-default">
 <p><a href="https://bit.ly/3mma-dda" class="uri">https://bit.ly/3mma-dda</a></p>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-rand2021" class="csl-entry" role="doc-biblioentry">
+Rand, Emma. 2021. <span>“Data Science for Modern and Open Research: You Can Make an r Package Too!”</span> November. <a href="https://doi.org/10.5281/zenodo.5714290">https://doi.org/10.5281/zenodo.5714290</a>.
+</div>
+<div id="ref-rand" class="csl-entry" role="doc-biblioentry">
+Rand, Emma, and Mine Cetinkaya-Rundel. n.d. <span>“Workshops/Package-Dev-Modules at Master · Forwards/Workshops.”</span> <a href="https://github.com/forwards/workshops">https://github.com/forwards/workshops</a>.
+</div>
 <div id="ref-wickham2020" class="csl-entry" role="doc-biblioentry">
 Wickham, Hadley, and Jenny Bryan. 2020. <em>R Packages</em>. The work-in-progress 2nd edition. Online. <a href="https://r-pkgs.org/index.html">https://r-pkgs.org/index.html</a>.
 </div>
+<div id="ref-wickham2021" class="csl-entry" role="doc-biblioentry">
+Wickham, Hadley, Jim Hester, Winston Chang, and Jennifer Bryan. 2021. <em>Devtools: Tools to Make Developing r Packages Easier</em>. <a href="https://CRAN.R-project.org/package=devtools">https://CRAN.R-project.org/package=devtools</a>.
+</div>
 </div>
 </section></section>
-    </div>
+</div>
   </div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="minimal-package_files/libs/revealjs/dist/reveal.js"></script>
-
-  <!-- reveal.js plugins -->
-  <script src="minimal-package_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="minimal-package_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="minimal-package_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="minimal-package_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="minimal-package_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="minimal-package_files/libs/revealjs/plugin/quarto-support/support.js"></script>
-  <script src="minimal-package_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="minimal-package_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="minimal-package_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="minimal-package_files/libs/revealjs/plugin/math/math.js"></script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
-
-
-  <script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="minimal-package_files/libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="minimal-package_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="minimal-package_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="minimal-package_files/libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="minimal-package_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="minimal-package_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script><script src="minimal-package_files/libs/revealjs/plugin/quarto-support/support.js"></script><script src="minimal-package_files/libs/revealjs/plugin/notes/notes.js"></script><script src="minimal-package_files/libs/revealjs/plugin/search/search.js"></script><script src="minimal-package_files/libs/revealjs/plugin/zoom/zoom.js"></script><script src="minimal-package_files/libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -1151,7 +1157,7 @@ Wickham, Hadley, and Jenny Bryan. 2020. <em>R Packages</em>. The work-in-progres
         height: 700,
 
         // Factor of the display size that should remain empty around the content
-        margin: 4.0e-2,
+        margin: 7.0e-2,
 
         math: {
           mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
@@ -1179,9 +1185,7 @@ Wickham, Hadley, and Jenny Bryan. 2020. <em>R Packages</em>. The work-in-progres
           RevealZoom
         ]
       });
-    </script>
-    
-    <script>
+    </script><script>
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
@@ -1220,9 +1224,7 @@ Wickham, Hadley, and Jenny Bryan. 2020. <em>R Packages</em>. The work-in-progres
         }
 
       })();
-    </script>
-
-    <script type="application/javascript">
+    </script><script type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
       tabsets.forEach(function(tabset) {
@@ -1297,6 +1299,6 @@ Wickham, Hadley, and Jenny Bryan. 2020. <em>R Packages</em>. The work-in-progres
       }
     });
     </script>
-    
+
 
 </body></html>
