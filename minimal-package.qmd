@@ -2,14 +2,14 @@
 title: "📦<br>You can make an R package too!"
 subtitle: "UoY, Bioinformatics group"
 author: "Emma Rand"
-date: "<br>🔗 [bit.ly/3mma-dda](https://bit.ly/3mma-dda)"
+date: "<br>🔗 [bit.ly/3mma-bio-pkg](https://bit.ly/3mma-bio-pkg)"
 format:
   revealjs: 
     theme: [simple, emma.scss]
     slide-number: true
     chalkboard: true
     preview-links: auto
-    footer: <https://bit.ly/3mma-dda>
+    footer: <https://bit.ly/3mma-bio-pkg>
     margin: 0.07
     code-link: true
 execute:
@@ -79,7 +79,7 @@ If you are already trying to work reproducibly you are almost doing it anyway!
 
     /stem-cell-proteomic
        /data-raw
-       /date-processed
+       /data-processed
        /figures
        /R
        README.md
@@ -201,7 +201,7 @@ There are five states a package can be in:
 -   in-memory
 
 ::: aside
-Having a understanding of the different states a package can be in is helpful in understanding package development.
+Having a understanding of the different states a package can be helpful in understanding package development.
 :::
 
 ## Package states
@@ -264,7 +264,6 @@ You don't normally need to make one.
 
 Unpacked it looks very like the source package
 
-What you create and work on.
 :::
 :::
 
@@ -660,7 +659,7 @@ Much of the work is done by the `roxygen2` package, but we won't directly run `r
 
 -   Run `devtools::document()` to convert roxygen comments to .Rd files.
 
--   Load the current version fo the package with `devtools::load_all()`
+-   Load the current version of the package with `devtools::load_all()`
 
 -   Preview documentation with `?`
 
@@ -735,6 +734,36 @@ usethis::use_package("assertthat") # Defaults to imports
 
 # 📦 Woo hoo📦 <BR> You made a package!
 
-## Summary
+Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />
+
+
+## Summary {.smaller}
+
+-   It is useful to make a package
+    -   it is fairly easy with `devtools`
+    -   it will help you work more reproducibly
+    -   you don't have to share
+-   Packages can be in one of 5 states: 
+    -   source - what you write
+    -   bundled - source compressed to single file, submitted to CRAN
+    -   binary - distribution for users w/o `devtools`
+    -   installed - a binary that's been decompressed
+    -   in-memory - installed package that has been loaded
+
+
+## Summary continued {.smaller}
+
+-   A minimal package comprises
+    -   a folder which is a package and a RProj
+    -   `DESCRIPTION`, `NAMESPACE`, `.Rbuildignore` `.gitignore`
+    -   `R/` directory for functions
+-   We add functions with `usethis:use_r()`
+-   We use the package interactively with `devtools::load_all()`
+-   We use `devtools::check()` to execute `R CMD` check
+-   We add a license with `usethis::use_mit_license()`
+-   We add documentation using **`roxygen2`** and `devtools::document()`
+-   We add package dependencies with `usethis::use_package()`
 
 ## References {.smaller}

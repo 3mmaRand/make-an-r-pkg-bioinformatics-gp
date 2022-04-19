@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.214">
+<meta name="generator" content="quarto-0.9.233">
 <meta name="author" content="Emma Rand">
 <title>📦 You can make an R package too!</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -403,7 +403,7 @@
 <section id="title-slide" class="center"><h1 class="title">📦<br>You can make an R package too!</h1>
   <p class="subtitle">UoY, Bioinformatics group</p>
   <p class="author">Emma Rand</p>
-  <p class="date"><br>🔗 <a href="https://bit.ly/3mma-dda">bit.ly/3mma-dda</a></p>
+  <p class="date"><br>🔗 <a href="https://bit.ly/3mma-bio-pkg">bit.ly/3mma-bio-pkg</a></p>
 </section><section id="summary" class="slide level2"><h2>Summary</h2>
 <ul>
 <li>Why make a package?</li>
@@ -461,7 +461,7 @@
 <p>If you are already trying to work reproducibly you are almost doing it anyway!</p>
 <pre><code>/stem-cell-proteomic
    /data-raw
-   /date-processed
+   /data-processed
    /figures
    /R
    README.md
@@ -547,47 +547,45 @@
 <div class="cell">
 <div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r cell-code number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">dir</span>(.Library)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code>  [1] "askpass"        "assertthat"     "backports"      "base"          
-  [5] "base64enc"      "bit"            "bit64"          "blob"          
-  [9] "bookdown"       "boot"           "brew"           "brio"          
- [13] "broom"          "bslib"          "cachem"         "callr"         
- [17] "cellranger"     "class"          "cli"            "clipr"         
- [21] "cluster"        "codetools"      "colorspace"     "commonmark"    
- [25] "compiler"       "cpp11"          "crayon"         "credentials"   
- [29] "curl"           "data.table"     "datasets"       "DBI"           
- [33] "dbplyr"         "desc"           "devtools"       "diffobj"       
- [37] "digest"         "downlit"        "dplyr"          "dtplyr"        
- [41] "ellipsis"       "emo"            "evaluate"       "fansi"         
- [45] "farver"         "fastmap"        "forcats"        "foreign"       
- [49] "fs"             "gargle"         "generics"       "gert"          
- [53] "ggplot2"        "gh"             "gitcreds"       "glue"          
- [57] "googledrive"    "googlesheets4"  "graphics"       "grDevices"     
- [61] "grid"           "gtable"         "haven"          "highr"         
- [65] "hms"            "htmltools"      "httpuv"         "httr"          
- [69] "ids"            "ini"            "isoband"        "jquerylib"     
- [73] "jsonlite"       "KernSmooth"     "knitr"          "labeling"      
- [77] "later"          "lattice"        "lifecycle"      "lubridate"     
- [81] "magrittr"       "markdown"       "MASS"           "Matrix"        
- [85] "memoise"        "methods"        "mgcv"           "mime"          
- [89] "modelr"         "munsell"        "nlme"           "nnet"          
- [93] "openssl"        "parallel"       "pillar"         "pkgbuild"      
- [97] "pkgconfig"      "pkgload"        "praise"         "prettyunits"   
-[101] "processx"       "progress"       "promises"       "ps"            
-[105] "purrr"          "R6"             "rappdirs"       "rcmdcheck"     
-[109] "RColorBrewer"   "Rcpp"           "readr"          "readxl"        
-[113] "rematch"        "rematch2"       "remotes"        "reprex"        
-[117] "rlang"          "rmarkdown"      "roxygen2"       "rpart"         
-[121] "rprojroot"      "rstudioapi"     "rversions"      "rvest"         
-[125] "sass"           "scales"         "selectr"        "servr"         
-[129] "sessioninfo"    "spatial"        "splines"        "stats"         
-[133] "stats4"         "stringi"        "stringr"        "survival"      
-[137] "sys"            "tcltk"          "testthat"       "tibble"        
-[141] "tidyr"          "tidyselect"     "tidyverse"      "tinytex"       
-[145] "tools"          "translations"   "tzdb"           "usethis"       
-[149] "utf8"           "utils"          "uuid"           "vctrs"         
-[153] "viridisLite"    "vroom"          "waldo"          "whisker"       
-[157] "withr"          "xaringan"       "xaringanthemer" "xfun"          
-[161] "xml2"           "xopen"          "yaml"           "zip"           </code></pre>
+<pre><code>  [1] "askpass"       "assertthat"    "backports"     "base"         
+  [5] "base64enc"     "bit"           "bit64"         "blob"         
+  [9] "boot"          "brew"          "brio"          "broom"        
+ [13] "bslib"         "cachem"        "callr"         "cellranger"   
+ [17] "class"         "cli"           "clipr"         "cluster"      
+ [21] "codetools"     "colorspace"    "commonmark"    "compiler"     
+ [25] "cpp11"         "crayon"        "credentials"   "curl"         
+ [29] "data.table"    "datasets"      "DBI"           "dbplyr"       
+ [33] "desc"          "devtools"      "diffobj"       "digest"       
+ [37] "downlit"       "dplyr"         "dtplyr"        "ellipsis"     
+ [41] "evaluate"      "fansi"         "farver"        "fastmap"      
+ [45] "forcats"       "foreign"       "fs"            "gargle"       
+ [49] "generics"      "gert"          "ggplot2"       "gh"           
+ [53] "gitcreds"      "glue"          "googledrive"   "googlesheets4"
+ [57] "graphics"      "grDevices"     "grid"          "gtable"       
+ [61] "haven"         "highr"         "hms"           "htmltools"    
+ [65] "httr"          "ids"           "ini"           "isoband"      
+ [69] "jquerylib"     "jsonlite"      "KernSmooth"    "knitr"        
+ [73] "labeling"      "lattice"       "lifecycle"     "lubridate"    
+ [77] "magrittr"      "MASS"          "Matrix"        "memoise"      
+ [81] "methods"       "mgcv"          "mime"          "modelr"       
+ [85] "munsell"       "nlme"          "nnet"          "openssl"      
+ [89] "parallel"      "pillar"        "pkgbuild"      "pkgconfig"    
+ [93] "pkgload"       "praise"        "prettyunits"   "processx"     
+ [97] "progress"      "ps"            "purrr"         "R6"           
+[101] "rappdirs"      "rcmdcheck"     "RColorBrewer"  "readr"        
+[105] "readxl"        "rematch"       "rematch2"      "remotes"      
+[109] "reprex"        "rlang"         "rmarkdown"     "roxygen2"     
+[113] "rpart"         "rprojroot"     "rstudioapi"    "rversions"    
+[117] "rvest"         "sass"          "scales"        "selectr"      
+[121] "sessioninfo"   "spatial"       "splines"       "stats"        
+[125] "stats4"        "stringi"       "stringr"       "survival"     
+[129] "sys"           "tcltk"         "testthat"      "tibble"       
+[133] "tidyr"         "tidyselect"    "tidyverse"     "tinytex"      
+[137] "tools"         "translations"  "tzdb"          "usethis"      
+[141] "utf8"          "utils"         "uuid"          "vctrs"        
+[145] "viridisLite"   "vroom"         "waldo"         "whisker"      
+[149] "withr"         "xfun"          "xml2"          "xopen"        
+[153] "yaml"          "zip"          </code></pre>
 </div>
 </div>
 </section></section><section><section id="package-states" class="title-slide slide level1 center"><h1>Package states</h1>
@@ -603,7 +601,7 @@
 </ul>
 
 <aside><div>
-<p>Having a understanding of the different states a package can be in is helpful in understanding package development.</p>
+<p>Having a understanding of the different states a package can be helpful in understanding package development.</p>
 </div></aside></section><section id="package-states-2" class="slide level2"><h2>Package states</h2>
 
 
@@ -644,7 +642,6 @@
 <p>Conventionally <code>.tar.gz</code></p>
 <p>You don’t normally need to make one.</p>
 <p>Unpacked it looks very like the source package</p>
-<p>What you create and work on.</p>
 </div>
 </div>
 </section><section id="package-states-5" class="slide level2"><h2>Package states</h2>
@@ -916,7 +913,7 @@ Error: The specified file is not readable: path-to\mypackage\NAMESPACE</code></p
 <ul>
 <li><p>Add roxygen comments to your .R files.</p></li>
 <li><p>Run <code><a href="https://devtools.r-lib.org/reference/document.html">devtools::document()</a></code> to convert roxygen comments to .Rd files.</p></li>
-<li><p>Load the current version fo the package with <code><a href="https://devtools.r-lib.org/reference/load_all.html">devtools::load_all()</a></code></p></li>
+<li><p>Load the current version of the package with <code><a href="https://devtools.r-lib.org/reference/load_all.html">devtools::load_all()</a></code></p></li>
 <li><p>Preview documentation with <code>?</code></p></li>
 <li><p>Rinse and repeat until the documentation looks the way you want.</p></li>
 </ul></section><section id="document-your-function" class="slide level2"><h2>Document your function</h2>
@@ -968,11 +965,53 @@ Error: The specified file is not readable: path-to\mypackage\NAMESPACE</code></p
 <p>🎬 How your <code>DESCRIPTION</code> file changed?</p>
 <p>🎬 Run <code><a href="https://devtools.r-lib.org/reference/check.html">devtools::check()</a></code> again. Has the warning disappeared?</p>
 </section></section><section><section id="woo-hoo-you-made-a-package" class="title-slide slide level1 center"><h1>📦 Woo hoo📦 <br> You made a package!</h1>
-
-</section><section id="summary-1" class="slide level2"><h2>Summary</h2>
-</section><section id="references" class="slide level2 smaller scrollable"><h2>References</h2>
+<p>Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>. <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"> <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a><br></p>
+</section><section id="summary-1" class="slide level2 smaller"><h2>Summary</h2>
+<ul>
+<li>It is useful to make a package
+<ul>
+<li>it is fairly easy with <code>devtools</code>
+</li>
+<li>it will help you work more reproducibly</li>
+<li>you don’t have to share</li>
+</ul>
+</li>
+<li>Packages can be in one of 5 states:
+<ul>
+<li>source - what you write</li>
+<li>bundled - source compressed to single file, submitted to CRAN</li>
+<li>binary - distribution for users w/o <code>devtools</code>
+</li>
+<li>installed - a binary that’s been decompressed</li>
+<li>in-memory - installed package that has been loaded</li>
+</ul>
+</li>
+</ul></section><section id="summary-continued" class="slide level2 smaller"><h2>Summary continued</h2>
+<ul>
+<li>A minimal package comprises
+<ul>
+<li>a folder which is a package and a RProj</li>
+<li>
+<code>DESCRIPTION</code>, <code>NAMESPACE</code>, <code>.Rbuildignore</code> <code>.gitignore</code>
+</li>
+<li>
+<code>R/</code> directory for functions</li>
+</ul>
+</li>
+<li>We add functions with <code>usethis:use_r()</code>
+</li>
+<li>We use the package interactively with <code><a href="https://devtools.r-lib.org/reference/load_all.html">devtools::load_all()</a></code>
+</li>
+<li>We use <code><a href="https://devtools.r-lib.org/reference/check.html">devtools::check()</a></code> to execute <code>R CMD</code> check</li>
+<li>We add a license with <code><a href="https://usethis.r-lib.org/reference/licenses.html">usethis::use_mit_license()</a></code>
+</li>
+<li>We add documentation using <strong><code>roxygen2</code></strong> and <code><a href="https://devtools.r-lib.org/reference/document.html">devtools::document()</a></code>
+</li>
+<li>We add package dependencies with <code><a href="https://usethis.r-lib.org/reference/use_package.html">usethis::use_package()</a></code>
+</li>
+</ul></section><section id="references" class="slide level2 smaller scrollable"><h2>References</h2>
 <div class="footer footer-default">
-<p><a href="https://bit.ly/3mma-dda" class="uri">https://bit.ly/3mma-dda</a></p>
+<p><a href="https://bit.ly/3mma-bio-pkg" class="uri">https://bit.ly/3mma-bio-pkg</a></p>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-rand2021" class="csl-entry" role="doc-biblioentry">

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="quarto-0.9.233">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>readme</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+
+  <script src="README_files/libs/clipboard/clipboard.min.js"></script>
+  <script src="README_files/libs/quarto-html/quarto.js"></script>
+  <script src="README_files/libs/quarto-html/popper.min.js"></script>
+  <script src="README_files/libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="README_files/libs/quarto-html/anchor.min.js"></script>
+  <link href="README_files/libs/quarto-html/tippy.css" rel="stylesheet">
+  <link id="quarto-text-highlighting-styles" href="README_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+  <script src="README_files/libs/bootstrap/bootstrap.min.js"></script>
+  <link href="README_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link href="README_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body class="fullcontent">
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  
+</div>
+
+<main class="content" id="quarto-document-content">
+<section id="you-can-make-an-r-package-too" class="level1">
+<h1>You can make an R package too!</h1>
+<p>Talk given at the Bioinformatics group at the University of York, UK Slides: <a href="https://bit.ly/3mma-bio-pkg">You can make an R package too!</a></p>
+<p>Based on <a href="https://r-pkgs.org/">R Packages</a> <span class="citation" data-cites="wickham2020">[@wickham2020]</span>, Data Science for Modern and Open Research: You can make an R package too! <span class="citation" data-cites="rand2021">[@rand2021]</span>, <a href="https://github.com/forwards/workshops">Forwards Package development modules</a> <span class="citation" data-cites="rand">[@rand]</span></p>
+<p>Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>. <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a><br></p>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<ul>
+<li><p>Why make a package?</p></li>
+<li><p>Where packages come from and where do they live?</p></li>
+<li><p>Package States</p></li>
+<li><p>How to make a minimal documented package and check it using the <code>devtools</code> approach</p></li>
+<li><p>Components of a minimal package</p></li>
+</ul>
+</section>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>by the end of this session you will able to:</p>
+<ul>
+<li>explain the rationale for writing packages</li>
+<li>describe the different states a package can be in</li>
+<li>create a minimal package and explain its key components</li>
+<li>add functions with <code>usethis:use_r()</code></li>
+<li>use the package interactively with <code>devtools::load_all()</code></li>
+<li>use <code>devtools::check()</code> to execute <code>R CMD</code> check</li>
+<li>add a license with <code>usethis::use_mit_license()</code></li>
+<li>add documentation using <strong><code>roxygen2</code></strong> and <code>devtools::document()</code></li>
+<li>add package dependencies with <code>usethis::use_package()</code></li>
+</ul>
+</section>
+<section id="prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
+<p>You should have</p>
+<ul>
+<li><a href="prerequisite-guides/install-r-rstudio.md">R and RStudio</a></li>
+<li><a href="install-pkg-dev-tools.md">R build toolchain</a>: Rtools(windows) or XCode (mac) or r-base-dev</li>
+<li>the following packages: <code>devtools</code> and <code>assertthat</code></li>
+<li>optionally git, a GitHub account and verified it can talk to RStudio</li>
+</ul>
+<p>You can verify your system is set up by running:</p>
+<p><code>devtools::has_devel()</code></p>
+<p>in the console</p>
+
+</section>
+</section>
+</main>
+<!-- /main column -->
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    setTimeout(function() {
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+</body></html>
