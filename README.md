@@ -4,7 +4,7 @@ Talk given at the Bioinformatics group at the University of York, UK
 
 **Slides: [You can make an R package too!](https://bit.ly/3mma-bio-pkg)**
 
-Based on [R Packages](https://r-pkgs.org/) [@wickham2020], Data Science for Modern and Open Research: You can make an R package too! [@rand2021], [Forwards Package development modules](https://github.com/forwards/workshops) [@rand]
+Based on [R Packages](https://r-pkgs.org/) [@wickham2020], [Data Science for Modern and Open Research: You can make an R package too!](https://3mmarand.github.io/DDA/slides/you-can-make-an-r-package.html#1) [@rand2021], [Forwards Package development modules](https://github.com/forwards/workshops) [@rand]
 
 Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />
