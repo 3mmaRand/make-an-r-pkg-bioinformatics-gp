@@ -1,7 +1,8 @@
 # You can make an R package too!
 
 Talk given at the Bioinformatics group at the University of York, UK
-Slides: [You can make an R package too!](https://bit.ly/3mma-bio-pkg)
+
+**Slides: [You can make an R package too!](https://bit.ly/3mma-bio-pkg)**
 
 Based on [R Packages](https://r-pkgs.org/) [@wickham2020], Data Science for Modern and Open Research: You can make an R package too! [@rand2021], [Forwards Package development modules](https://github.com/forwards/workshops) [@rand]
 
