@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6475257.svg)](https://doi.org/10.5281/zenodo.6475257)
+
 # You can make an R package too!
 
 Talk given at the Bioinformatics group at the University of York, UK
@@ -49,3 +51,6 @@ You can verify your system is set up by running:
 `devtools::has_devel()`
 
 in the console
+
+# Please cite as
+Emma Rand. (2022, April 21). Bioinformatics group at the University of York, UK: You can make an R package too!. Zenodo. https://doi.org/10.5281/zenodo.6475257
